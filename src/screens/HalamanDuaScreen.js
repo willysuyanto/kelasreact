@@ -11,7 +11,7 @@ export default class HalamanDuaScreen extends Component {
     }
 
     componentDidMount() {
-       
+
     }
 
     render() {
@@ -21,6 +21,7 @@ export default class HalamanDuaScreen extends Component {
                 <View>
                     {/* mulai dari sini */}
                 </View>
+                
             </View>
         );
     }
