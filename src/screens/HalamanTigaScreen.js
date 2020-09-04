@@ -6,7 +6,7 @@ import { Card, CardItem, Button, Picker, Item, Icon } from 'native-base';
 import config from '../config'
 
 
-export default class HalamanSatuScreen extends Component {
+export default class HalamanTigaScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -99,10 +99,10 @@ export default class HalamanSatuScreen extends Component {
             <View style={styles.container}>
                 <StatusBar translucent={false} barStyle="dark-content" />
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{this.props.navigation.toggleDrawer()}} style={styles.headerContainer}>
+                    <View style={styles.headerContainer}>
                         <Icon type='FontAwesome' name='bars' style={styles.icon} />
-                        <Text style={styles.headerText}>HOME</Text>
-                    </TouchableOpacity>
+                        <Text style={styles.headerText}>MENU</Text>
+                    </View>
                     <TouchableOpacity style={styles.headerHome} onPress={() => {
                         this.componentDidMount()
                     }}>
@@ -126,11 +126,7 @@ export default class HalamanSatuScreen extends Component {
                         </Picker>
                     </Item>
                 </View>
-                <ScrollView refreshControl={
-                    <RefreshControl refreshing={this.state.refreshing} onRefresh={()=>{this._getDataApi(this.state.CountryCode)}} />
-                }>
-                    {this._generateList()}
-                </ScrollView>
+                <Text>Halaman Tiga</Text>
             </View>
         );
     }

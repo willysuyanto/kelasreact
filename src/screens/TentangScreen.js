@@ -6,7 +6,7 @@ import { Card, CardItem, Button, Picker, Item, Icon } from 'native-base';
 import config from '../config'
 
 
-export default class HalamanSatuScreen extends Component {
+export default class TentangScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -99,10 +99,10 @@ export default class HalamanSatuScreen extends Component {
             <View style={styles.container}>
                 <StatusBar translucent={false} barStyle="dark-content" />
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{this.props.navigation.toggleDrawer()}} style={styles.headerContainer}>
+                    <View style={styles.headerContainer}>
                         <Icon type='FontAwesome' name='bars' style={styles.icon} />
-                        <Text style={styles.headerText}>HOME</Text>
-                    </TouchableOpacity>
+                        <Text style={styles.headerText}>TENTANG</Text>
+                    </View>
                     <TouchableOpacity style={styles.headerHome} onPress={() => {
                         this.componentDidMount()
                     }}>
@@ -111,26 +111,7 @@ export default class HalamanSatuScreen extends Component {
                     </TouchableOpacity>
                     <Image />
                 </View>
-                <View>
-                    <Item picker>
-                        <Picker
-                            mode="dropdown"
-                            style={{ width: undefined }}
-                            placeholder="Select your SIM"
-                            placeholderStyle={{ color: "#bfc6ea" }}
-                            placeholderIconColor="#007aff"
-                            selectedValue={this.state.selected}
-                            onValueChange={this.onValueChange.bind(this)}
-                        >
-                            {this._generateOption()}
-                        </Picker>
-                    </Item>
-                </View>
-                <ScrollView refreshControl={
-                    <RefreshControl refreshing={this.state.refreshing} onRefresh={()=>{this._getDataApi(this.state.CountryCode)}} />
-                }>
-                    {this._generateList()}
-                </ScrollView>
+                <Text style={{alignSelf:'center',justifyContent:'center'}}>Ini Halaman Tentang</Text>
             </View>
         );
     }
